@@ -99,7 +99,7 @@ header{
 
     h1{
         width: 100%;
-        .extend .paddingAddin;
+        @extend .paddingAddin;
     }
     nav{
         width: 100%;
@@ -117,7 +117,7 @@ section{
         margin: 0 auto;
     }
     &.content1, &.content2{
-        .extend .paddingAddin;
+        @extend .paddingAddin;
     }
 }
 .row{
@@ -139,7 +139,7 @@ footer{
                 NAVIGATION
 ***********************************************/
 header nav{
-    .extend .paddingAddin;
+    @extend .paddingAddin;
     clear: both;
 
     &>ul>li>a{
