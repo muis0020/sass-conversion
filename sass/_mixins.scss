@@ -1,0 +1,85 @@
+//*mixins*//
+
+@mixin boxsize($sizing){
+    -webkit-box-sizing: $sizing;
+    box-sizing: $sizing;
+}
+
+@mixin langSpec(){
+            &[lang=en]{
+               display:block; 
+            }
+            &[lang=de],
+            &[lang=ar],
+            &[lang=ru]{
+                display:none;
+            }
+}
+
+// -- Equal Spaced Columns -- //
+// Number of Columns - First Column
+// Remaining Number of Columns * Margin Spacing
+// Container Width - Total Margin Spacing
+// Remaining Width / Total Number of Columns
+
+@mixin equalSpaced( $num_of_cols, $spacing, $width:100%  ){
+  
+  width: ( $width - ( $spacing * ($num_of_cols - 1) ) ) / $num_of_cols;
+  margin-left: $spacing;
+  float: left;
+  // Remove Spacing from First Child
+  &:first-child{
+    margin-left: 0;
+  }
+  
+}
+
+@mixin h1styling($colorSpec){
+     h1{
+            width: 100%;
+            color: $colorSpec;
+            
+            i.fa-lg{
+                display:inline;
+                color: $colorSpec;
+                vertical-align:baseline;
+                float:none;
+                font-size: $fontMax;
+                line-height: 6.3968rem;
+            
+                ~ span{
+                    float: none;
+                    letter-spacing: 0.25rem;
+                    font-size: $fontXXL;
+                    /**
+                    1 lines of 3.998 * 1.6 = 6.3968
+                    **/
+                    text-align: left;
+                }
+            }
+        }
+}
+
+@mixin navStyling(){
+    nav{
+            position: static;
+            clear:both;
+            width: 100%;
+            padding: 0;
+            &>ul>li{
+                width:20%;
+                float: left;
+                &>a{
+                    font-size: $fontReg;
+                    line-height: 2rem;
+                    min-height: 6rem;
+                    border:none;
+                    border-left:1px solid $lightGrey; 
+                    padding:1.0rem;
+                    background-color: $white;
+                    }
+                }
+            }
+        @content;
+        }
+

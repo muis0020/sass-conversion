@@ -1,0 +1,219 @@
+//*queries*//
+
+@media all and (min-width:($breakpoint-small +1)) and (max-width:$breakpoint-medium){
+    header{
+        width: $breakpoint-small;
+        margin: 0 auto;
+        min-height: 8rem;
+        
+        @include h1styling($darkBrown);
+            
+        @include navStyling{
+            nav>ul>li>a:last-child{
+                        border-right:1px solid $lightGrey;
+                    };
+        }
+
+        &:before, &:after{
+            width:230px;
+        }
+    }
+    section.focal, 
+    section.content1,
+    section.content2,
+    footer{
+        width: $breakpoint-small; 
+        margin: 0 auto;    
+    }
+    .col-4{  
+        @include equalSpaced( 2, 0);
+    }
+    section.content2{
+        h4{
+            font-size: $fontMed;
+        }
+       li{
+            font-size: $fontMed;
+        }
+    }
+    footer{
+        .fa-circle{
+            color: $medBlue;
+        }
+       .col-2:last-child{
+            unicode-bidi: bidi-override;
+            direction: rtl;
+        }
+        h4{
+            @include langSpec();
+        }
+    }
+}
+
+
+
+@media all and (min-width:($breakpoint-medium +1)) and (max-width: $breakpoint-large){
+    header{
+        width: $breakpoint-medium;
+        margin: 0 auto;
+        &:before,
+        &:after{
+            width:300px;
+        }
+        
+        @include h1styling($darkBlue);
+        
+        @include navStyling{        
+           nav>ul>li{
+                background-color: $white;
+                &>a{
+                    font-size: $fontReg;
+                    min-height: 2rem; 
+                    padding: 0 1.0rem;
+                }
+           }
+        }
+    }
+            
+    section.focal, 
+    section.content1,
+    section.content2,
+    footer{
+        width: $breakpoint-medium; 
+        margin: 0 auto;    
+    }
+    section.focal{
+        h2{
+            width: 600px; 
+            margin: 0 auto;
+        }
+        p.author{
+            width: 600px; 
+            margin: 0 auto;
+        }
+    }
+    .col-3{
+        @include equalSpaced( 3, 5%);
+    }
+    .col-4{
+        @include equalSpaced( 4, 4%);
+    }
+    section{
+        &.content1 h3{
+            font-size: $fontLg;
+            font-weight: 100;
+            .fa-2x{
+                font-size: $fontLg;
+                padding-right: 1rem;
+            }
+        }
+    
+        &.content2{
+            h4{
+                font-size: $fontMed;
+            }
+            li{
+                font-size: $fontMed;
+            }
+            p{
+                font-size: $fontReg;
+                font-weight: 400;
+            }
+        }
+    }
+    footer{
+        .fa-circle{
+            color: $lightBrown;
+        }
+        h4{
+            @include langSpec();
+        }
+    }
+}
+
+
+@media all and (min-width:($breakpoint-large +1)){
+    header{
+        width: $breakpoint-large;
+        margin:0 auto;
+        &:before,
+        &:after{
+            width:450px;
+        }
+        
+        @include h1styling($darkBrown);
+        
+        @include navStyling{ 
+        nav>ul>li{
+                background-color: $white;
+                &>a{
+                    font-size: $fontMed;
+                    min-height: 2rem;
+                    padding:0 1.0rem;
+                }
+                &:first-child a{
+                    border-left:none;
+                }
+           }
+       }
+    }
+    section.focal, 
+    section.content1,
+    section.content2,
+    footer{
+        width: $breakpoint-large; 
+        margin: 0 auto;    
+    }
+    section.focal{
+        h2{
+            font-size: $fontXXL;
+            width: 600px; 
+            margin: 0 auto;
+        }
+        p.author{
+            width: 600px; 
+            margin: 0 auto;
+        }
+    }
+    .col-3{
+        @include equalSpaced( 3, 5%);
+    }
+    .col-4{
+        @include equalSpaced( 4, 4%);
+    }
+    section.content1 h3{
+        font-size: $fontXL;
+        font-weight: 100;
+        .fa-2x{
+            font-size: $fontXL;
+            padding-right: 1rem;
+            vertical-align: middle;
+        }
+    }
+    section.content2{
+        h4{
+            font-size: $fontLg;
+        }
+        li{
+            font-size: $fontLg;
+        }
+        p{
+            font-size: $fontMed;
+            font-weight: 400;
+        }
+    }
+    footer p{
+        font-size: $fontMed;
+        letter-spacing: 0.2rem;
+        &:last-child{
+            color: $lightGrey;
+        }
+        .fa-circle{
+            color: $medBlue;
+        }
+    
+        h4{
+            @include langSpec();
+        }
+    }   
+}
